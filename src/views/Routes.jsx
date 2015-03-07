@@ -1,6 +1,6 @@
-const React = require("react");
-const Router = require("react-router");
-const Main = require("./Main");
+const React = require('react');
+const Router = require('react-router');
+const Main = require('./Main');
 
 const {Route, DefaultRoute} = Router;
 
@@ -11,9 +11,9 @@ const {Route, DefaultRoute} = Router;
  * @module Routes
  */
 const Routes = (
-	<Route path="/">
-		<DefaultRoute handler={Main} />
-	</Route>
+  <Route path='/'>
+    <DefaultRoute handler={Main} />
+  </Route>
 );
 
 export default Routes;
