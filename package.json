@@ -17,7 +17,7 @@
     "webpack",
     "hapi"
   ],
-  "main": "dist/index",
+  "main": "src/index",
   "scripts": {
     "start": "eval 'supervisor dist/server >tmp/supervisor.log 2>&1 & SUPERVISOR_PID=$!';     sleep 1;      open http://localhost:8000;       tail -f tmp/*.log;     kill $SUPERVISOR_PID;",
     "build": "webpack --verbose --progress --colors --display-error-details --config webpack.server.js && webpack --verbose --progress --colors --display-error-details --config webpack.client.js",
@@ -26,21 +26,25 @@
     "watch": "eval 'npm run watch-server >tmp/server.log 2>&1 & SERVER_PID=$!';      eval 'npm run watch-client >tmp/client.log 2>&1 & CLIENT_PID=$!';     sleep 3;    npm run start;     kill $CLIENT_PID $SERVER_PID;"
   },
   "dependencies": {
-    "async": "0.9.0",
-    "babel": "4.6.6",
-    "hapi": "8.2.0",
-    "react": "0.12.2",
-    "react-router": "0.12.4",
-    "superagent": "0.21.0"
+    "async": "^0.9.0",
+    "babel": "^4.6.6",
+    "bluebird": "^2.9.13",
+    "hapi": "^8.2.0",
+    "react": "^0.13.0-rc2",
+    "react-router": "git://github.com:rackt/react-router.git#0.13-compat",
+    "rx": "^2.4.1",
+    "rx-react": "^0.2.0-beta.1",
+    "superagent": "^0.21.0"
   },
   "devDependencies": {
-    "babel-loader": "4.0.0",
-    "css-loader": "0.9.1",
-    "json-loader": "0.5.1",
-    "jsx-loader": "0.12.2",
-    "react-hot-loader": "1.1.7",
-    "style-loader": "0.8.3",
-    "webpack": "1.7.2",
-    "webpack-dev-server": "1.7.0"
+    "babel-loader": "^4.0.0",
+    "css-loader": "^0.9.1",
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.12.2",
+    "react-hot-loader": "^1.1.7",
+    "sass-loader": "^0.4.1",
+    "style-loader": "^0.8.3",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
   }
 }
