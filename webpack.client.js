@@ -6,7 +6,7 @@ module.exports = {
   cache:   false,
   context: __dirname,
   devtool: false,
-  entry:   ["./src/client"],
+  entry:   ['./src/client'],
   output:  {
     path:          path.join(__dirname, 'static/dist'),
     filename:      'client.js',
@@ -27,6 +27,10 @@ module.exports = {
       {include:    /\.jsx?$/,
         loaders: ['react-hot', 'babel-loader'],
         exclude: /node_modules/
+      }, {
+        test: /\.scss$/,
+        loader: 'style!css!sass?includePaths[]=' +
+           require('node-bourbon').includePaths
       }
     ]
   },
